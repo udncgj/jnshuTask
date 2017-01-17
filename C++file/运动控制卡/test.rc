@@ -1,0 +1,327 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\test.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\test.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 test"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "test 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2016",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_TEST_DIALOG DIALOGEX 0, 0, 503, 298
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+MENU IDR_MENU
+FONT 9, "宋体"
+BEGIN
+    EDITTEXT        IDC_EDIT_DATA,51,175,69,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "开始",IDC_BUTSTART,241,1,50,14
+    PUSHBUTTON      "暂停",IDC_BUTTON2,295,1,50,14
+    PUSHBUTTON      "停止",IDC_BUTTON3,351,1,50,14
+    PUSHBUTTON      "复位",IDC_BUTTON4,409,1,50,14
+    LTEXT           "X位置：",IDC_STATIC,348,143,28,10
+    LTEXT           "Y位置：",IDC_STATIC,348,161,28,10
+    LTEXT           "Z位置：",IDC_STATIC,348,177,28,10
+    LTEXT           "X速度：",IDC_STATIC,425,143,28,10
+    LTEXT           "Y速度：",IDC_STATIC,425,161,28,10
+    LTEXT           "Z速度：",IDC_STATIC,425,177,28,10
+    PUSHBUTTON      "前",IDC_FORWARDY,401,253,29,23
+    PUSHBUTTON      "后",IDC_BACKWARDY,401,203,29,23
+    PUSHBUTTON      "左",IDC_LIFTX,368,229,29,23
+    PUSHBUTTON      "右",IDC_RIGHTX,432,226,29,23
+    LTEXT           "",IDC_POSX,377,143,43,10
+    LTEXT           "",IDC_POSZ,377,177,43,10
+    LTEXT           "",IDC_POSY,377,161,43,10
+    LTEXT           "",IDC_RUNSPEEDX,455,143,43,10
+    LTEXT           "",IDC_RUNSPEEDZ,455,177,43,10
+    LTEXT           "",IDC_RUNSPEEDY,455,161,43,10
+    LTEXT           "",IDC_POSACTX,251,244,43,10
+    LTEXT           "",IDC_POSACTZ,251,278,43,10
+    LTEXT           "",IDC_POSACTY,251,262,43,10
+    PUSHBUTTON      "上",IDC_UPPERZ,464,205,29,23
+    PUSHBUTTON      "下",IDC_DOWNZ,466,247,29,23
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,0,35,229,203
+    PUSHBUTTON      "添加",IDC_ADDPOS,0,0,50,14
+    PUSHBUTTON      "删除",IDC_DELPOS,163,0,50,14
+    PUSHBUTTON      "修改",IDC_MODIFYPOS,55,0,50,14
+    PUSHBUTTON      "插入",IDC_INSERTPOS,109,0,50,14
+    PUSHBUTTON      "Button7",IDC_BUTTON7,243,21,38,16
+    LISTBOX         IDC_MESSAGE,339,35,158,83,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "循环",IDC_STATIC,49,287,24,11
+    LTEXT           "点位",IDC_STATIC,154,287,24,11
+    LTEXT           "",IDC_STATIC_NUM,213,287,24,11
+    LTEXT           "",IDC_STATIC_STEP,177,287,17,11
+    LTEXT           "/",IDC_STATIC,204,287,8,11
+    LTEXT           "",IDC_STATIC_CYCLES,107,287,24,11
+    LTEXT           "/",IDC_STATIC,98,287,8,11
+    LTEXT           "",IDC_STATIC_I,77,287,24,11
+    LISTBOX         IDC_POSDRAW,230,73,108,98,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "保存",IDC_SAVE1,246,199,27,22
+    PUSHBUTTON      "读取",IDC_READ1,289,200,27,22
+END
+
+IDD_SETTING_DIALOG DIALOGEX 0, 0, 187, 178
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,84,164,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,137,164,50,14
+    CONTROL         "Tab1",IDC_TAB_SETTING,"SysTabControl32",0x0,0,0,187,160,
+                    WS_EX_STATICEDGE
+END
+
+IDD_IO_DIALOG DIALOG DISCARDABLE  0, 0, 359, 153
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "输入检测",IDC_STATIC,2,2,177,136,BS_CENTER
+    GROUPBOX        "输出检测",IDC_STATIC,179,2,177,136,BS_CENTER
+    CONTROL         140,IDC_IN1,"Static",SS_BITMAP,9,19,11,11
+    PUSHBUTTON      "名称复原",IDC_RESET,152,138,52,13
+    LTEXT           "Static",IDC_IN_NAME1,23,21,21,8
+    CONTROL         "",IDC_OUT1,"Static",SS_BITMAP,185,14,11,11
+    LTEXT           "Static",IDC_OUT_NAME1,199,16,21,8
+    EDITTEXT        IDC_NAME_CHANGE,63,44,42,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "Static",IDC_BUTTON2,22,37,21,8,BS_CENTER | BS_VCENTER | 
+                    BS_FLAT
+END
+
+IDD_SETTING1 DIALOG DISCARDABLE  0, 0, 187, 95
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,18,0,50,14
+    PUSHBUTTON      "取消",IDCANCEL,121,0,50,14
+END
+
+IDD_SETTING2 DIALOG DISCARDABLE  0, 0, 209, 193
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    LTEXT           "Static",IDC_STATIC,13,22,22,8
+END
+
+IDD_SETTING3 DIALOG DISCARDABLE  0, 0, 187, 95
+STYLE WS_CHILD
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,137,0,50,14
+    PUSHBUTTON      "取消",IDCANCEL,137,24,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "test Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "test\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2016\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "test.EXE\0"
+            VALUE "ProductName", "test 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "打开",                        ID_OPEN
+        MENUITEM "保存",                        ID_SAVE
+    END
+    POPUP "检测"
+    BEGIN
+        MENUITEM "IO检测",                      ID_IOCHACK
+    END
+    POPUP "设置"
+    BEGIN
+        MENUITEM "运行选择",                    ID_SELECT
+        MENUITEM "参数设置",                    ID_SETTING
+    END
+    MENUITEM "帮助",                        65535
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_RED                 BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_GREEN               BITMAP  DISCARDABLE     "res\\green.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE 程序初始化失败。请确认 OLE 库程序是正确的版本。"
+    IDS_ABOUTBOX            "关于 test(&A)..."
+END
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\test.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

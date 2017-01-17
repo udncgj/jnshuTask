@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;font-size:14px}
+ul{list-style:none;}
+a{text-decoration:none;}
+.vertical ul{width:100px}
+/*
+a{text-decoration:none}
+li{height:30px; line-height:30px;width:100px; background:#ccc; margin-bottom:1px; text-indent:10px}
+*/
+.vertical a{display:block;height:30px; line-height:30px;width:100px; background:#ccc; margin-bottom:1px; text-indent:10px}/*text-decoration取消下划线;display转换成块;text-indent文本缩进*/
+.vertical a:hover{background:#f60; color:#fff}
+.level{ margin-top:10px;}
+.level ul{height:30px; border-bottom:#F90 5px solid; padding-left:30px}
+.level li{float:left;}
+.level a{display:block;height:30px; line-height:30px;width:120px; background:url(img/btnBg.png); margin-bottom:1px; text-align:center;}
+.level li a.on,.level li a:hover{ background-position:0 -30px; color:#fff;}/*增加高度：height:40px;line-height:40px;(垂直居中)margin-top:-10px*/
+.nav {height: 30px; border-bottom: 5px solid #F60; margin-left:50px; width:600px;}
+.nav li { float: left; position:relative; height:30px; width:120px }
+.nav li a { display: block; height: 30px; text-align: center; line-height: 30px; width:120px; background: #efefef; margin-left: 1px; }
+.subNav{ position:absolute; top:30px; left:0; width:120px; height:0; overflow:hidden}
+.subNav li a{ background:#ddd }
+.subNav li a:hover{ background:#efefef}
+</style>
+<script>
+window.onload=function(){
+    var aLi=document.getElementsByTagName('li');
+	for(var i=0; i<aLi.length; i++){
+		aLi[i].onmouseover=function(){
+            //鼠标经过一级菜单，二级菜单动画下拉显示出来
+	oSubNav=this.getElementsByTagName('ul')[0];
+            if(oSubNav){
+                var This=oSubNav;
+                clearInterval(This.time);
+                This.time=setInterval(function(){
+                    This.style.height=This.offsetHeight+16+"px";
+                    if(This.offsetHeight>=120)
+                    clearInterval(This.time);
+                },30)
+             }
+		}
+        //鼠标离开菜单，二级菜单动画收缩起来。		
+		aLi[i].onmouseout=function(){
+			if(oSubNav){
+                var This=oSubNav;
+                clearInterval(This.time);
+                This.time=setInterval(function(){
+                    This.style.height=This.offsetHeight-16+"px";
+                    if(This.offsetHeight<=0)
+                    clearInterval(This.time);
+                },30)
+             }
+            
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<div class="vertical">
+  <ul>
+    <li><a href="#">首页</a></li>
+    <li><a href="#">新闻快讯</a></li>
+    <li><a href="#">产品展示</a></li>
+    <li><a href="#">售后服务</a></li>
+  </ul>
+</div>
+<div class="level">
+  <ul>
+    <li><a class="on" href="#">首页</a></li>
+    <li><a href="#">新闻快讯</a></li>
+    <li><a href="#">产品展示</a></li>
+    <li><a href="#">售后服务</a></li>
+  </ul>
+</div>
+<div class="telescopic">
+  <ul class="nav">
+      <li><a href="#">一级菜单</a>
+          <ul class="subNav">
+              <li><a href="#">二级菜单</a></li>
+              <li><a href="#">二级菜单</a></li>
+              <li><a href="#">二级菜单</a></li>
+              <li><a href="#">二级菜单</a></li>
+          </ul>
+      </li>
+      <li><a href="#">一级菜单</a>
+          <ul class="subNav">
+              <li><a href="#">二级菜单</a></li>
+              <li><a href="#">二级菜单</a></li>
+              <li><a href="#">二级菜单</a></li>
+              <li><a href="#">二级菜单</a></li>
+          </ul>
+      </li>
+      <li><a href="#">一级菜单</a></li>
+      <li><a href="#">一级菜单</a></li>
+      <li><a href="#">一级菜单</a></li>
+  </ul>
+</div>
+</body>
+</html>
