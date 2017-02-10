@@ -1,0 +1,129 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{margin:0; padding:0; font-size:16px;
+	font-family:"微软雅黑";}
+
+ul{list-style:none;}
+a{text-decoration:none; color:#000;}
+/******************************************/
+/******************************************/
+#top{
+	height:50px;
+	width:1000px;
+	line-height:50px;
+	margin-left:20px;
+}
+.name{
+	float:left;
+}
+.name a{
+	font-size:26px;
+}
+.name span{
+	font-size:18px;
+}
+#tianqi8_wetherinfo{
+	padding-left:200px;
+	padding-top:2px;
+}
+/******************************************/
+/******************************************/
+#list{
+	background-color:#766d66;
+	height:50px;
+	width:1400px;
+	padding-right:20px;
+	float:right;
+}
+.list_ul .list_top{
+	display:block;
+	margin-top:15px;
+	color:#fff;
+	font-size:18px;
+	height:30px;
+	width:149px;
+	border-left:1px solid #fff;
+}
+.list_ul ul li{
+	width:150px;
+	height:50px;
+	float:right;
+	text-align:center;
+}
+.list_hide{
+	display:none;
+}
+.list_ul a:hover,.list_ul ul li:hover,.list_show a:hover{
+	color:#ffff00;
+	background-color:#666666;
+}
+.list_show{
+	margin-top:5px;
+	display:block;
+	text-align:center;
+	line-height:50px;
+	width:150px;
+	height:50px;
+	float:right;
+}
+.list_show li{
+	border-top:1px solid #fff;
+	background-color:#666666;
+}
+.list_show li a{
+	display:block;
+	width:150px;
+	height:50px;
+}
+/******************************************/
+/******************************************/
+/*focus盒子*/
+#boxID{
+	/*z-index:-1;*/
+	position:fixed;
+	left:0;
+	top:120px;
+	margin:0 auto;
+	height:320px;
+	margin-top:5px;
+	overflow:hidden;
+}
+.pic{
+	display:none;
+}
+.box_pic{
+	display:block;
+}
+/******************************************/
+/******************************************/
+/*正文*/
+#suject{
+	clear:both;
+	width:1100px;
+	margin-left:160px;
+	margin-top:60px;
+	border:1px solid #000;
+	height:1000px;
+	background-color:#FF0;
+}
+.suject_top{
+	height:35px;
+	width:150px;
+	background-color:#766d66;
+	color:#fff;
+	line-height:38px;
+	text-align:center;
+}
+.suject_mes{
+	width:150px;
+	border-top:5px solid #fff;
+}
+.suject_mes dt{
+	height:25px;
+}
+.suject_mes dd{
+	height:25px;
+	padding-left:10px;
+	display:none;
+}
