@@ -4,11 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>udncgj个人网站</title>
 <link href="main.css" rel="stylesheet" type="text/css" />
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript" src="myfocus/myfocus-2.0.1.min.js" charset="utf-8"></script><!--引入myFocus库-->
-<script type="text/javascript" src="myfocus/mF_fancy.js" charset="utf-8"></script>
 <link href="myfocus/mF_fancy.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="method.js"></script>
 </head>
 
 <body>
@@ -79,29 +75,79 @@
     </div>
     <dl class="suject_mes">
       <dt class="suject_hide">选择器</dt>
-      <dd>基本筛选</dd>
-      <dd>筛选选择器</dd>
-      <dd>内容筛选</dd>
-      <dd>属性筛选</dd>
-      <dd>子元素筛选</dd>
-      <dd>表单元素</dd>
-      <dd>表单对象属性筛选</dd>
+      <div>
+        <dd>基本筛选</dd>
+        <dd>筛选选择器</dd>
+        <dd>内容筛选</dd>
+        <dd>属性筛选</dd>
+        <dd>子元素筛选</dd>
+        <dd>表单元素</dd>
+        <dd>表单对象属性筛选</dd>
+      </div>
       <dt class="suject_hide">属性和样式</dt>
-      <dd>.attr/.removeAttr</dd>
-      <dd>html/.text</dd>
-      <dd>.val</dd>
-      <dd>.addClass</dd>
-      <dd>.removeClass</dd>
-      <dd>.toggleClass</dd>
-      <dd>.css</dd>
+      <div>
+        <dd>.attr/.removeAttr</dd>
+        <dd>html/.text</dd>
+        <dd>.val</dd>
+        <dd>.addClass</dd>
+        <dd>.removeClass</dd>
+        <dd>.toggleClass</dd>
+        <dd>.css</dd>
+      </div>
     </dl>
   </div>
   <div class="suject_text">
-    
+    <div class="text_show">
+      <h2>基础选择器</h2>
+      <p>$(‘#id’)  id获取  <br/>
+         $(‘.class’)  Class获取 <br/>
+         $(‘元素’)  元素获取 <br/>
+         $(‘parent > child’)子元素<br/>
+         $(‘.prev 元素’)后代元素<br/>
+         $(‘.prev+元素’)相邻元素 <br/>
+         $(‘.prev~元素’)兄弟元素  <br/>
+      </p>
+      <h2>基本筛选选择器</h2>
+      <p>很多时候我们不能直接通过基本选择器与层级选择器找到我们想要的元素，为此jQuery提供了一系列的筛选选择器用来更快捷的找到所需的DOM元素。筛选选择器很多都不是CSS的规范，而是jQuery自己为了开发者的便利延展出来的选择器</p>
+      <p>筛选选择器的用法与CSS中的伪元素相似，选择器用冒号“：”开头，通过一个列表，看看基本筛选器的描述：<br/>
+        $(‘:first’)  匹配第一个元素  <br/>
+		$(‘:last’)  匹配最后一个元素  <br/>
+        $(‘:not(selector)’)  选择所有元素去除不匹配的一个<br/>
+        $(‘:eq(index)’)  在匹配的集合中选择索引值为index的一个<br/>
+        $(‘:gt(index)’)  选择所有大于index的元素<br/>
+        $(‘:even’)  选择索引值为偶数的<br/>
+        $(‘:odd’)  选择索引值为奇数的<br/>
+        $(‘:lt(index)’)  现在所有小于index的<br/>
+        $(‘:header’)  现在所有标题元素，如h1，h2，h3等<br/>  
+        $(‘:lang(language)’)  选择指定语言的所有元素 <br/> 
+        $(‘:root’)  选择该文档的根元素  <br/>
+        $(‘:animated’)  选择所以正在执行动画效果的元素 
+      </p>
+      <p>注意事项：<br/>
+:eq(), :lt(), :gt(), :even, :odd 用来筛选他们前面的匹配表达式的集合元素，根据之前匹配的元素在进一步筛选，注意jQuery合集都是从0开始索引<br/>
+gt是一个段落筛选，从指定索引的下一个开始，gt(1) 实际从2开始</p>
+    </div>
+    <div>
+      <h2>内容筛选选择器</h2>
+      <p>基本筛选选择器针对的都是元素DOM节点，如果我们要通过内容来过滤，jQuery也提供了一组内容筛选选择器，当然其规则也会体现在它所包含的子元素或者文本内容上</p>
+      <p>内容过滤器描述如下表：<br/>
+        $(‘:contains(text)’)  选择所以包含指定文本的元素<br/>  
+        $(‘:parent’)  选择所以含有子元素或者文本的元素  <br/>
+        $(‘:empty’)  选择所以没有子元素的元素（包含文本节点）<br/>  
+        $(‘:has(selector)’)  选择元素中至少包含指定选择器的元素 <br/> 
+        可见性筛选<br/>
+        $(‘:visible’)  选择所以显示的元素<br/>  
+        $(‘:hidden’)  选择所以隐藏的元素 <br/>
+      </p>
+    </div>
   </div>
 </div>
 <div id="img">
 <!--  <canvas id="clock" width="300">-->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript" src="myfocus/myfocus-2.0.1.min.js" charset="utf-8"></script><!--引入myFocus库-->
+<script type="text/javascript" src="myfocus/mF_fancy.js" charset="utf-8"></script>
+<script type="text/javascript" src="method.js"></script>
 </div>
 </body>
 </html>

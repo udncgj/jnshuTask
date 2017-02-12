@@ -54,7 +54,7 @@ a{text-decoration:none; color:#000;}
 .list_hide{
 	display:none;
 }
-.list_ul a:hover,.list_ul ul li:hover,.list_show a:hover{
+.list_ul a:hover,.list_ul ul li:hover,.list_show a:hover,.suject_mes dt:hover,.suject_mes dd:hover{
 	color:#ffff00;
 	background-color:#666666;
 }
@@ -104,8 +104,9 @@ a{text-decoration:none; color:#000;}
 	margin-left:160px;
 	margin-top:60px;
 	border:1px solid #000;
-	height:1000px;
-	background-color:#FF0;
+}
+.suject_list{
+	float:left;
 }
 .suject_top{
 	height:35px;
@@ -118,12 +119,39 @@ a{text-decoration:none; color:#000;}
 .suject_mes{
 	width:150px;
 	border-top:5px solid #fff;
+	cursor:pointer;
+	background-color:#766d66;
+	height:1000px;
+	color:#fff;
 }
 .suject_mes dt{
-	height:25px;
+	height:32px;
+	line-height:38px;
+	padding-left:5px;
+}
+.suject_mes div{
+	display:none;
 }
 .suject_mes dd{
 	height:25px;
-	padding-left:10px;
+	padding-left:14px;
+}
+/******************************/
+/*内容*/
+.suject_text div{
+	width:800px;
+	margin-left:170px;
 	display:none;
+}
+.text_show{
+	display:block;
+}
+.suject_text .text_show h2{
+	font-size:20px;
+	margin-top:20px;
+	margin-bottom:10px;
+    
+}
+.suject_text .text_show p{
+	margin-bottom:5px;
 }

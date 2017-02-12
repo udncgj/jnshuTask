@@ -13,9 +13,7 @@ window.onload = function(){
 		}
 		aList[i].onmouseout = function(){
 			var hideMes = this.getElementsByTagName('ul')[0];
-	        boxChange(hideMes,{opacity:0},3/*,function(){
-				hideMes.className = "list_hide";
-			}*/);
+	        boxChange(hideMes,{opacity:0},3);
 			i = setTimeout(function(){
 				hideMes.className = "list_hide";
 			},500);
@@ -141,20 +139,28 @@ function getStyle(obj,attr){
 }
 
 $(document).ready(function(e) {
-	var a = $('.suject_hide:eq(0)~dd:eq(2)').text();
-	console.log(a);
-	$('.suject_hide:first').click(function(){
-		if($('.suject_hide:eq(0)~dd:eq(0)').attr('display') == 'none'){
-			$('.suject_hide:eq(0)~dd').each(function(index,ele){
-				ele.css('display','block');
-			})
+	var $sujectHide = $('.suject_hide');
+	$sujectHide.click(function(){                 //.unbind('click')取消绑定
+		var i = $sujectHide.index(this);
+		var $changeHide = $('.suject_hide:eq('+i+')~div:eq(0)');
+		$changeHide.slideToggle(500);//下拉
+		//隐藏、显示
+		/*if($changeHide.css('display') == 'none'){
+			$changeHide.css('display','block');
 		}else{
-			$('.suject_hide:eq(0)~dd').each(function(index,ele){
-				ele.css('display','none');
-			})
-		}
+			$changeHide.css('display','none');
+		}*/
+	});
+	var $textDd = $('.suject_mes dd');
+	console.log($textDd.eq(4).text());
+	var $textShow = $('.suject_text div');
+	$textDd.click(function(){
+		var i = $textDd.index(this);
+		console.log(i);
+		$textShow.each(function(index, element) {
+            $textShow.eq('+index+').removeClass();
+		console.log(i);
+        });
+		$textShow.eq('+i+').addClass('text_show');
 	})
-    $('.suject_hide').each(function(index, element) {
-        
-    });
 });
