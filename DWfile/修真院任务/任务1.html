@@ -41,6 +41,7 @@ var aboxDiv = document.getElementsByClassName('nine-box')[0].getElementsByTagNam
 var btnStart = document.getElementsByClassName('start')[0];
 var btnStop = document.getElementsByClassName('stop')[0];
 btnStart.onclick = function(){
+	clearInterval(btnStart.timer);
 	btnStart.timer = setInterval(function(){
 		var aColor = Array();
 		for(var i=0; i<9; i++){
@@ -48,10 +49,11 @@ btnStart.onclick = function(){
 		}
 		for(var i=0; i<3; i++){
 			aColor[i] = randomNum(aColor,i);
-			console.log(aColor[i]);
+			//console.log(aColor[i]);
 			aboxDiv[aColor[i]].style.backgroundColor = '#' + (function(color){return (color +=  '0123456789abcdef'[Math.floor(Math.random()*16)]) && (color.length == 6) ? color : arguments.callee(color);
   })('');
 		}
+		console.log(aColor);
 	},1000);
 }
 btnStop.onclick = function(){
@@ -60,10 +62,12 @@ btnStop.onclick = function(){
 function randomNum(array,i){
 	var num = parseInt(Math.random()*9);
 	for(var j=0; j<i; j++){
-		if(array[j] = num){
-			num = randomNum(array,j);
+		if(array[j] == num){
+			num = randomNum(array,i);
+			console.log('重复');
 		}
 	}
+	//console.log(array);
 	return num;
 }
 </script>
