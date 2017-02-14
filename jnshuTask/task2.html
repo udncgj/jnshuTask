@@ -39,7 +39,7 @@ body{width:400px; height:600px;}
 	background-color:#fcfcfc;
 	display:none;
 }
-.return-page1{
+.return{
 	display:block;
 	height:50px;
 	width:40px;
@@ -102,6 +102,11 @@ body{width:400px; height:600px;}
 	border-radius:5px;
 	cursor:pointer;
 }
+/******************************************/
+.page3{
+	background-color:#fcfcfc;
+	display:none;
+}
 </style>
 </head>
 
@@ -112,7 +117,7 @@ body{width:400px; height:600px;}
   <div class="game-change game"></div>
 </div>
 <div class="page2">
-  <div class="top"><input type="button" class="return-page1" /></div>
+  <div class="top"><input type="button" class="return-page1 return" /></div>
   <div class="mes-top player"><span>玩家配比</span></div>
   <div class="mes player">
     <div>
@@ -127,38 +132,69 @@ body{width:400px; height:600px;}
   </div>
   <div class="player"><input type="button" class="num-ok" value="去发牌" /></div>
 </div>
+<div class="page3">
+  <div class="top"><input type="button" class="return-page2 return" /></div>
+  <div class="mes-pic"><span>下个任务处理，敬请期待</span></div>
+</div>
 
 <script>
 var gameChange = document.getElementsByClassName('game-last')[0];
-var returnpage1 = document.getElementsByClassName('return-page1')[0];
+var returnPage1 = document.getElementsByClassName('return-page1')[0];
+var returnPage2 = document.getElementsByClassName('return-page2')[0];
 var page1 = document.getElementsByClassName('page1')[0];
 var page2 = document.getElementsByClassName('page2')[0];
+var page3 = document.getElementsByClassName('page3')[0];
 var numInput = document.getElementsByClassName('num')[0];
 var numKiller = document.getElementsByClassName('killer')[0],
     numCivilian = document.getElementsByClassName('civilian')[0];
+var numOk = document.getElementsByClassName('num-ok')[0];
+var aNum = [];
+var gameOk = false;
 gameChange.onclick = function(){
 	pageShow(page2);
 }
-returnpage1.onclick = function(){
+returnPage1.onclick = function(){
 	pageShow(page1);
+}
+returnPage2.onclick = function(){
+	pageShow(page2);
+}
+numOk.onclick = function(){
+	if(gameOk == true){pageShow(page3);}
+	else{alert("请确定人数");}
 }
 document.onkeydown = function(event){
 	var e = event || window.event || arguments.callee.caller.arguments[0];
 	if(e&&e.keyCode == 13){
 		if(document.activeElement.className == 'num'){
-			console.log(numInput.value);
 			var num = numInput.value;
-			if(num<4 || num>18){
-				alert('数据错误!请输入4-18');
+			if(num>=4&&num<=18){
+				aNum = new Array(num);
+				var killNum = Math.ceil(num/3);
+				var civiNum = Math.floor(num*2/3);
+				numKiller.innerHTML = killNum;
+				numCivilian.innerHTML = civiNum;
+				for(var i=0; i<killNum; i++){aNum[i] = 0;}
+				for(var i=0; i<civiNum; i++){aNum[i+killNum] = 1;}
+				for(var i=0; i<aNum.length; i++){
+					var randomNum = parseInt(Math.random()*(num-1));
+					var j = aNum[randomNum];
+					aNum[randomNum] = aNum[i];
+					aNum[i] = j;
+				}
+				gameOk = true;
+				
+				//输出随机数组
+				console.log(aNum);
 			}else{
-				numKiller.innerHTML = Math.ceil(num/3);
-				numCivilian.innerHTML = Math.floor(num*2/3);
+				gameOk = false;
+				alert('数据错误!请输入4-18');
 			}
 		}
 	}
 }
 function pageShow(obj){
-	for(var i=1; i<3; i++){
+	for(var i=1; i<4; i++){
 		var page = "page" +i;
 		var pageHide = document.getElementsByClassName("page" +i)[0];
 		pageHide.style.display = "none";
